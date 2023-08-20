@@ -1,4 +1,4 @@
-import developersController from "./developers.controller";
+import developersControllers from "./developers.controllers"
+import developerInfosControllers from "./developerInfos.controllers"
 
-
-export { developersController }
+export { developersControllers, developerInfosControllers }

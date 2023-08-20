@@ -13,4 +13,5 @@ const create = async (payload: DeveloperCreate): Promise<Developer> =>{
     return QueryResult.rows[0]
 }
 
+
 export default { create }
