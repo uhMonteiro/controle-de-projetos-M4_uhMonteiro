@@ -33,4 +33,23 @@ const destroy = async (developerId: string): Promise<void> =>{
     await client.query('DELETE FROM "developers" WHERE "id" = $1;', [developerId])
 }
 
-export default { create, partialUpdate, destroy }
+const retrieve = async (id: string): Promise<Developer> =>{
+    const query: string = `
+    SELECT
+      "d"."id" AS "developerId",
+      "d"."name" AS "developerName",
+      "d"."email" AS "developerEmail",
+      "di"."developerSince" AS "developerInfoDeveloperSince",
+      "di"."preferredOS" AS "developerInfoPreferredOS"
+    FROM "developers" AS "d"
+    LEFT JOIN "developerInfos" AS "di"
+    ON "di"."developerId" = "d"."id"
+    WHERE "d"."id" = $1;
+    `
+
+    const queryResult: DeveloperResult = await client.query(query, [id])
+
+    return queryResult.rows[0]
+}
+
+export default { create, partialUpdate, destroy, retrieve }

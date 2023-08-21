@@ -11,5 +11,4 @@ export {
     DeveloperInfos, 
     DeveloperInfosCreate, 
     DeveloperInfosResult,
-    
 } 
