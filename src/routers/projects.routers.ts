@@ -1,14 +1,14 @@
 import { Router } from "express"
 import { projectsControllers } from "../controllers"
-import { projectIdExists,} from "../middlewares"
+import { developerIdProjectsExists, projectIdExists,} from "../middlewares"
 
 const projectsRouter: Router = Router()
 
-projectsRouter.post("", projectsControllers.create)
+projectsRouter.post("", developerIdProjectsExists, projectsControllers.create)
 
 projectsRouter.use("/:id", projectIdExists)
 
 projectsRouter.get("/:id", projectsControllers.retrieve)
-projectsRouter.patch("/:id", projectsControllers.partialUpdate)
+projectsRouter.patch("/:id", developerIdProjectsExists, projectsControllers.partialUpdate)
 
 export default projectsRouter
