@@ -8,5 +8,7 @@ type Developer = {
 
 type DeveloperResult = QueryResult<Developer>
 type DeveloperCreate = Omit<Developer, "id">
+type DeveloperRead = Array<Developer>
+type DeveloperUpdate = Partial<DeveloperCreate>
 
-export {Developer, DeveloperCreate, DeveloperResult}
+export {Developer, DeveloperCreate, DeveloperResult, DeveloperRead, DeveloperUpdate}
