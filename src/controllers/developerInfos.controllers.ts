@@ -7,13 +7,15 @@ import { AppError } from "../errors";
 
 const create = async (req: Request, res: Response): Promise<Response> =>{
     const { id } = req.params
+    
+    //const query: string = `
+    //SELECT * FROM "developerInfos"
+    //WHERE "developerId" = $1;
+    //`
+    //const queryResult: DeveloperInfosResult = await client.query(query,[id])
+    const developerInfos: DeveloperInfos = await developerInfosServices.checkInfos(req.params.id)
 
-    const query: string = `
-    SELECT * FROM "developerInfos"
-    WHERE "developerId" = $1;
-    `
-    const queryResult: DeveloperInfosResult = await client.query(query,[id])
-    if(queryResult.rows[0]){
+    if(developerInfos){
         throw new AppError("Developer infos already exists.", 409)
     }
 

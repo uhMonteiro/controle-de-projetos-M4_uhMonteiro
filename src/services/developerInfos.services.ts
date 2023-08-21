@@ -13,4 +13,15 @@ const create = async (payload: DeveloperInfosCreate): Promise<DeveloperInfos> =>
     return QueryResult.rows[0]
 }
 
-export default {create}
+const checkInfos = async(id: string): Promise<DeveloperInfos> =>{
+    const query: string = `
+    SELECT * FROM "developerInfos"
+    WHERE "developerId" = $1;
+    `
+
+    const queryResult: DeveloperInfosResult = await client.query(query, [id])
+
+    return queryResult.rows[0]
+}
+
+export default {create, checkInfos}
