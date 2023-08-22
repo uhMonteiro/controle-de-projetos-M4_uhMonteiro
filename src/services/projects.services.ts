@@ -1,6 +1,6 @@
-import format from "pg-format";
-import { Projects, ProjectsCreate, ProjectsResult, ProjectsUpdate } from "../interfaces";
-import { client } from "../database";
+import format from "pg-format"
+import { Projects, ProjectsCreate, ProjectsResult, ProjectsUpdate } from "../interfaces"
+import { client } from "../database"
 
 const create = async (payload: ProjectsCreate): Promise<Projects> =>{
     const querryFormat: string = format(
@@ -24,7 +24,6 @@ const partialUpdate = async (
     )
 
     const queryResult: ProjectsResult = await client.query(queryFormat, [projectId])
-    
 
     return queryResult.rows[0]
 }

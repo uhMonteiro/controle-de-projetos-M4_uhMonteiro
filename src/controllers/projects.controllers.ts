@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import { Projects } from "../interfaces";
-import { projectsServices } from "../services";
+import { Request, Response } from "express"
+import { Projects } from "../interfaces"
+import { projectsServices } from "../services"
 
 
 const create = async (req: Request, res: Response): Promise<Response> =>{

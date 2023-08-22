@@ -1,6 +1,6 @@
-import format from "pg-format";
-import { Developer, DeveloperCreate, DeveloperResult, DeveloperUpdate } from "../interfaces";
-import { client } from "../database";
+import format from "pg-format"
+import { Developer, DeveloperCreate, DeveloperResult, DeveloperUpdate } from "../interfaces"
+import { client } from "../database"
 
 const create = async (payload: DeveloperCreate): Promise<Developer> =>{
     const querryFormat: string = format(

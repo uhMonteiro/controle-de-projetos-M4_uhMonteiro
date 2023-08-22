@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from "express";
-import { Projects, ProjectsResult } from "../interfaces";
-import { client } from "../database";
-import { AppError } from "../errors";
+import { NextFunction, Request, Response } from "express"
+import { Projects, ProjectsResult } from "../interfaces"
+import { client } from "../database"
+import { AppError } from "../errors"
 
 
 export const projectIdExists = async(req: Request, res: Response, next: NextFunction): Promise<void> =>{

@@ -1,8 +1,7 @@
-import { NextFunction, Request, Response } from "express";
-import { Developer, DeveloperResult } from "../interfaces";
-import { client } from "../database";
-import { AppError } from "../errors";
-
+import { NextFunction, Request, Response } from "express"
+import { Developer, DeveloperResult } from "../interfaces"
+import { client } from "../database"
+import { AppError } from "../errors"
 
 export const developerIdExists = async(req: Request, res: Response, next: NextFunction): Promise<void> =>{
     const { id } = req.params

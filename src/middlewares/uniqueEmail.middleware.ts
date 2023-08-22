@@ -1,8 +1,7 @@
-import { NextFunction, Request, Response } from "express";
-import { DeveloperResult } from "../interfaces";
-import { client } from "../database";
-import { AppError } from "../errors";
-
+import { NextFunction, Request, Response } from "express"
+import { DeveloperResult } from "../interfaces"
+import { client } from "../database"
+import { AppError } from "../errors"
 
  const uniqueEmail = async (req: Request, res: Response, next: NextFunction): Promise<void> =>{
     const { email } = req.body

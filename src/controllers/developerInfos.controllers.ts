@@ -1,13 +1,10 @@
-import { Request, Response } from "express";
-import { DeveloperInfos, DeveloperInfosCreate, DeveloperInfosResult } from "../interfaces";
-import { developerInfosServices } from "../services";
-import { client } from "../database";
-import { AppError } from "../errors";
-
+import { Request, Response } from "express"
+import { DeveloperInfos, DeveloperInfosCreate} from "../interfaces"
+import { developerInfosServices } from "../services"
+import { AppError } from "../errors"
 
 const create = async (req: Request, res: Response): Promise<Response> =>{
     const { id } = req.params
-    
     
     const developerInfos: DeveloperInfos = await developerInfosServices.checkInfos(id)
 

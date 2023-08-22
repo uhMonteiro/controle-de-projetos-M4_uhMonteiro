@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import { Developer } from "../interfaces";
-import { developerServices } from "../services";
+import { Request, Response } from "express"
+import { Developer } from "../interfaces"
+import { developerServices } from "../services"
 
 
 const create = async (req: Request, res: Response): Promise<Response> =>{

@@ -6,7 +6,6 @@ type Developer = {
     email: string
 }
 
-
 type DeveloperResult = QueryResult<Developer>
 type DeveloperCreate = Omit<Developer, "id">
 type DeveloperRead = Array<Developer>

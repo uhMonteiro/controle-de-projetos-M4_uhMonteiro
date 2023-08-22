@@ -10,7 +10,6 @@ type Projects = {
     developerId: number
 }
 
-
 type ProjectsResult = QueryResult<Projects>
 type ProjectsCreate = Omit<Projects, "id">
 type ProjectsUpdate = Partial<ProjectsCreate>

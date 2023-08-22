@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import { Developer, DeveloperResult } from "../interfaces"
+import { DeveloperResult } from "../interfaces"
 import { client } from "../database"
 import { AppError } from "../errors"
 
@@ -14,7 +14,6 @@ export const developerIdProjectsExists = async(req: Request, res: Response, next
     if(!queryResult.rowCount){
         throw new AppError("Developer not found.",404)
     }
-
     
     return next()
 }
